@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>ZYSystem Data Analysis</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="lib/dhtmlx/style.css" />
+    <script type="text/javascript" src="lib/zingChart/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="lib/zingChart/zingchart-html5-min.js"></script>
+    <script type="text/javascript" src="lib/zingChart/license.js"></script>
+    <script src="lib/dhtmlx/dhtmlx.js"></script>
+    <script src="lib/dhtmlx/dhtmlxgrid_nxml.js"></script>
+    <script type="text/javascript">
+    function sload() {
+        zingchart.render({
+            'id': 'MainK',
+            'output' : 'canvas',
+            'width': 850,
+            'height':600,
+            'dataurl': 'DATA/oneMinute.txt'
+        });
+        
+      var mygrid = new dhtmlXGridObject('gridbox');
+	    mygrid.setImagePath("lib/dhtmlx/imgs/");
+	    mygrid.setHeader("TradingDay,InvestorID,InstrumentID,OffsetFlag,Direction,Volume,Price,OrderTime");
+	    mygrid.setSkin("sky_blue");
+	    mygrid.init();
+	    mygrid.load('DATA/Order.csv',"csv");
+	    mygrid.enableCSVHeader(true);
+    };
+</script>
+</head>
+<body onload='sload()'>
+<div class="g" id="MainK"></div>
+<div id="gridbox" style="width:850px;height:200px"></div>
+</body>
+</html>

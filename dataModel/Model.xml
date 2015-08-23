@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Model>
+    <!-- 定义整个系统中的各种业务实体 -->
+    <Entitys>
+        <Entity name="Log" label="日志信息" description="日志信息的描述">
+            <Field name="LogID" type="ID" label="错误编号" description="每个日志的唯一编号"/>
+            <Field name="LogLevel" type="LogLevel" label="日志级别" description="描述日志应该在什么状况下输出"/>
+            <Field name="LogCode" type="Code" label="日志代码" description="日志的代码，用于define和返回码"/>
+            <Field name="LogMsg" type="Memo" label="日志信息" description="日志的具体描述信息"/>
+        </Entity>
+        <Entity name="ConnectionConfig" label="网络连接配置" description="用于描述与交易行情服务器连接的通讯要素">
+            <Field name="ConnectionID" type="ConnectionID" label="服务器编号" description="行情服务器的识别代码"/>
+            <Field name="Td_url" type="URL" label="远程行情服务地址" description="远程行情服务器的地址"/>
+            <Field name="Md_url" type="URL" label="远程交易服务地址" description="远程交易服务器的地址"/>
+            <Field name="ConnectionType" type="MarketDataType" label="行情类型" description="行情服务器接收的行情类型"/>
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="投资者实体的唯一标识"/>
+        </Entity>
+        <Entity name="MoneyChange" label="资金变化" description="用于产生投资者账户的资金变化">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="资金发生变化的投资者账户"/>
+            <Field name="FundDirection" type="FundDirection" label="资金变化方向" description="资金变化方向"/>
+            <Field name="Change" type="Money" label="资金变化额" description="资金变化额"/>
+        </Entity>
+        <Entity name="RiskControler" label="风险控制管理器" description="用于描述风险控制管理器的启动参数">
+            <Field name="FullPrice" type="Price" label="止盈价差" description="盈利的价差超过此价位后就平仓"/>
+            <Field name="StopLossPrice" type="Price" label="止损价差" description="亏损的价差超过此价位后就平仓"/>
+        </Entity>
+        <Entity name="Instrument" label="合约" description="用于描述合约实体的各种信息">
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="合约的唯一标识"/>
+            <Field name="Multiple" type="Volume" label="合约乘数" description="用于标记每手持仓标的物的数量"/>
+            <Field name="UpperLimitPrice" type="Price" label="涨停板价" description="涨停板价"/>
+            <Field name="LowerLimitPrice" type="Price" label="跌停板价" description="跌停板价"/>
+        </Entity>
+        <Entity name="MarginRate" label="合约保证金率" description="用于描述合约的最终保证金率">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="资金的所有者"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="合约的唯一标识"/>
+            <Field name="MarginRatioByMoney" type="Ratio" label="按金额保证金率" description="按照每手标的物价值的比率收取保证金"/>
+            <Field name="MarginRatioByVolume" type="Money" label="每手保证金金额" description="每手收取的定额保证金"/>
+        </Entity>
+        <Entity name="FeeRate" label="合约手续费率" description="用于描述合约实体的最终手续费率">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="资金的所有者"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="合约的唯一标识"/>
+            <Field name="OpenFeeRatioByMoney" type="Ratio" label="开仓按金额手续费率" description="开仓时按照每手标的物价值的比率收取手续费"/>
+            <Field name="OpenFeeRatioByVolume" type="Money" label="开仓每手手续费金额" description="开仓时每手收取的定额手续费"/>
+            <Field name="CloseFeeRatioByMoney" type="Ratio" label="平仓按金额手续费率" description="平仓时按照每手标的物价值的比率收取手续费"/>
+            <Field name="CloseFeeRatioByVolume" type="Money" label="平仓每手手续费金额" description="平仓时每手收取的定额手续费"/>
+            <Field name="CloseTodayFeeRatioByMoney" type="Ratio" label="平今按金额手续费率" description="平今仓时按照每手标的物价值的比率收取手续费"/>
+            <Field name="CloseTodayFeeRatioByVolume" type="Money" label="平今每手手续费金额" description="平今仓时每手收取的定额手续费"/>
+        </Entity>
+        <Entity name="Investor" label="投资者" description="用于描述投资者实体的各种信息">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="投资者实体的唯一标识"/>
+            <Field name="InvestorPassword" type="Password" label="交易密码" description="投资者用于登录系统、交易的密码"/>
+            <Field name="AccountID" type="InvestorID" label="资金账号" description="该投资者关联的资金账号"/>
+            <Field name="AccountPassword" type="Password" label="资金密码" description="投资者用于资金划转的密码"/>
+            <Field name="BrokerID" type="BrokerID" label="经纪公司代码" description="投资者所在的经纪公司在综合交易平台的标识"/>
+        </Entity>
+        <Entity name="NewTradingDay" title="新交易日" description="新的交易日开始">
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+        </Entity>
+        <Entity name="MarketData" title="市场行情" description="说明合约基本的行情信息">
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="合约在系统中的编号"/>
+            <Field name="ExchangeID" type="ExchangeID" label="交易所代码" description="一个交易所的编号"/>
+            <Field name="LastPrice" type="Price" label="最新价" description="当日该合约交易期间的最新成交价格"/>
+            <Field name="PreSettlementPrice" type="Price" label="上次结算价" description="上一日的结算价"/>
+            <Field name="PreClosePrice" type="Price" label="昨收盘" description="上一日收盘价"/>
+            <Field name="PreOpenInterest" type="LargeVolume" label="昨持仓量" description="前最后持仓量，双向计算"/>
+            <Field name="OpenPrice" type="Price" label="今开盘" description="该期货合约开市前五分钟内经集合竞价产生的成交价格"/>
+            <Field name="HighestPrice" type="Price" label="最高价" description="指一定时间内该合约成交价中的最高成交价格"/>
+            <Field name="LowestPrice" type="Price" label="最低价" description="指一定时间内该合约成交价中的最低成交价格"/>
+            <Field name="Volume" type="Volume" label="数量" description="该合约在当日交易期价所有成交合约的双边数量"/>
+            <Field name="Turnover" type="Money" label="成交金额" description="该合约完成交易的市值"/>
+            <Field name="OpenInterest" type="LargeVolume" label="持仓量" description="最后持仓量，双向计算"/>
+            <Field name="ClosePrice" type="Price" label="今收盘" description="该合约当日交易的最后一笔成交价格"/>
+            <Field name="SettlementPrice" type="Price" label="本次结算价" description="该合约当日成交价格按成交量的加权平均价，当日无成交的，按上一日结算价"/>
+            <Field name="UpperLimitPrice" type="Price" label="涨停板价" description="涨停板价"/>
+            <Field name="LowerLimitPrice" type="Price" label="跌停板价" description="跌停板价"/>
+            <Field name="PreDelta" type="Ratio" label="昨虚实度" description="期权用的昨日虚实度"/>
+            <Field name="CurrDelta" type="Ratio" label="今虚实度" description="期权用的今日虚实度"/>
+            <Field name="UpdateTime" type="Time" label="最后修改时间" description="最后修改时间"/>
+            <Field name="UpdateMillisec" type="Millisec" label="最后修改毫秒" description="最后修改毫秒"/>
+            <Field name="BidPrice1" type="Price" label="申买价一" description="申买价一"/>
+            <Field name="BidVolume1" type="Volume" label="申买量一" description="申买量一"/>
+            <Field name="AskPrice1" type="Price" label="申卖价一" description="申卖价一"/>
+            <Field name="AskVolume1" type="Volume" label="申卖量一" description="申卖量一"/>
+            <Field name="AveragePrice" type="Price" label="当日均价" description="当日均价"/>
+        </Entity>
+        <Entity name="KDJ" title="kdj指标" description="说明kdj指标特定时间的数据值">
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="合约在系统中的编号"/>
+            <Field name="ExchangeID" type="ExchangeID" label="交易所代码" description="一个交易所的编号"/>
+            <Field name="UpdateTime" type="Time" label="最后修改时间" description="最后修改时间"/>
+            <Field name="UpdateMillisec" type="Millisec" label="最后修改毫秒" description="最后修改毫秒"/>
+            <Field name="Idx_k" type="IndexValue" label="k数值" description="k数值"/>
+            <Field name="Idx_d" type="IndexValue" label="d指标" description="d指标"/>
+            <Field name="Idx_j" type="IndexValue" label="j指标" description="j指标"/>
+        </Entity>
+        <Entity name="MACD" title="macd指标" description="说明macd指标特定时间的数据值">
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="合约在系统中的编号"/>
+            <Field name="ExchangeID" type="ExchangeID" label="交易所代码" description="一个交易所的编号"/>
+            <Field name="UpdateTime" type="Time" label="最后修改时间" description="最后修改时间"/>
+            <Field name="UpdateMillisec" type="Millisec" label="最后修改毫秒" description="最后修改毫秒"/>
+            <Field name="Idx_diff" type="IndexValue" label="diff数值" description="diff数值"/>
+            <Field name="Idx_dea" type="IndexValue" label="dea指标" description="dea指标"/>
+            <Field name="Idx_bar" type="IndexValue" label="bar指标" description="bar指标"/>
+        </Entity>
+        <Entity name="ModelConfigA" title="计算模型的配置" description="说明计算模型">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="投资者实体的唯一标识"/>
+            <Field name="DataPath" type="Path" label="数据文件路径" description="模型计算的结果数据存放路径"/>
+            <Field name="CalculateCycle" type="TimeCycle" label="模型计算的循环时间" description="控制模型多少时间进行一次计算"/>
+            <Field name="ModelType" type="ModelType" label="模型类型" description="描述模型具体类型"/>
+            <Field name="Idx_k" type="IndexValue" label="k数值" description="k数值"/>
+            <Field name="Idx_d" type="IndexValue" label="d指标" description="d指标"/>
+            <Field name="Idx_j" type="IndexValue" label="j指标" description="j指标"/>
+            <Field name="Idx_diff" type="IndexValue" label="diff数值" description="diff数值"/>
+            <Field name="Idx_dea" type="IndexValue" label="dea指标" description="dea指标"/>
+            <Field name="Idx_bar" type="IndexValue" label="bar指标" description="bar指标"/>
+            <Field name="MAX_k" type="IndexValue" label="k数值最大阀值" description="k数值最大阀值"/>
+            <Field name="MAX_d" type="IndexValue" label="d指标最大阀值" description="d指标最大阀值"/>
+            <Field name="MAX_j" type="IndexValue" label="j指标最大阀值" description="j指标最大阀值"/>
+            <Field name="MAX_diff" type="IndexValue" label="diff数值最大阀值" description="diff数值最大阀值"/>
+            <Field name="MAX_dea" type="IndexValue" label="dea指标最大阀值" description="dea指标最大阀值"/>
+            <Field name="MAX_bar" type="IndexValue" label="bar指标最大阀值" description="bar指标最大阀值"/>
+            <Field name="MIN_k" type="IndexValue" label="k数值最小阀值" description="k数值最小阀值"/>
+            <Field name="MIN_d" type="IndexValue" label="d指标最小阀值" description="d指标最小阀值"/>
+            <Field name="MIN_j" type="IndexValue" label="j指标最小阀值" description="j指标最小阀值"/>
+            <Field name="MIN_diff" type="IndexValue" label="diff数值最小阀值" description="diff数值最小阀值"/>
+            <Field name="MIN_dea" type="IndexValue" label="dea指标最小阀值" description="dea指标最小阀值"/>
+            <Field name="MIN_bar" type="IndexValue" label="bar指标最小阀值" description="bar指标最小阀值"/>
+        </Entity>
+        <Entity name="Trade" title="成交回报" description="从远端交易系统返回的成交信息">
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="成交的所有者"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="成交合约代码"/>
+            <Field name="OffsetFlag" type="OffsetFlag" label="开平标记" description="开平标记"/>
+            <Field name="Direction" type="Direction" label="持仓方向" description="仓位的多空标记"/>
+            <Field name="DoneVolume" type="Volume" label="成交数量" description="成交手数"/>
+            <Field name="DonePrice" type="Price" label="成交价" description="成交价"/>
+            <Field name="TradeTime" type="Time" label="成交时间" description="成交时间"/>
+            <Field name="LocalOrderID" type="LocalOrderID" label="本地委托编号" description="关联的委托指令编号"/>
+        </Entity>
+        <Entity name="Singnal" title="交易信号" description="可以触发交易的交易信号">
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="报单的所有者"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="报单合约代码"/>
+            <Field name="OffsetFlag" type="OffsetFlag" label="开平标记" description="开平标记"/>
+            <Field name="Direction" type="Direction" label="持仓方向" description="仓位的多空标记"/>
+            <Field name="Volume" type="Volume" label="报单数量" description="报单手数"/>
+            <Field name="Price" type="Price" label="报盘价格" description="报单价格，暂不支持市价单"/>
+            <Field name="SingnalReason" type="SingnalReason" label="产生信号的原因" description="是哪里发出的交易信号"/>
+            <Field name="TriggerTime" type="Time" label="触发时间" description="其实是触发交易信号时的行情时间,而不是本地系统时间"/>
+            <Field name="LocalTime" type="DateTime" label="本地日期时间" description="系统运行的本地日期时间"/>
+        </Entity>
+        <Entity name="Order" title="报单" description="向远端交易系统发出的交易申请">
+            <Field name="LocalOrderID" type="LocalOrderID" label="本地委托编号" description="我们系统给予每笔委托的编号"/>
+            <Field name="TradingDay" type="Date" label="交易日" description="交易日"/>
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="报单的所有者"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="报单合约代码"/>
+            <Field name="OffsetFlag" type="OffsetFlag" label="开平标记" description="开平标记"/>
+            <Field name="Direction" type="Direction" label="持仓方向" description="仓位的多空标记"/>
+            <Field name="Price" type="Price" label="报盘价格" description="报单价格，暂不支持市价单"/>
+            <Field name="OrderStatus" type="OrderStatus" label="报单状态" description="报单状态"/>
+            <Field name="OrderSubmitStatus" type="OrderSubmitStatus" label="报单提交状态" description="报单提交状态"/>
+            <Field name="LocalTime" type="DateTime" label="本地日期时间" description="系统运行的本地日期时间"/>
+            <Field name="OrderTime" type="Time" label="报单时间" description="其实是报单时的行情时间,而不是本地系统时间"/>
+            <Field name="VolumeTraded" type="Volume" label="成交数量" description="已经成交的数量"/>
+            <Field name="VolumeRemain" type="Volume" label="未成交量" description="订单未成交的数量"/>
+        </Entity>
+        <Entity name="RealPosition" title="盘中仓位记录器" description="说明一个投资者在一个合约上的持仓状态">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="持仓的所有者"/>
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="持仓所在的合约"/>
+            <Field name="Direction" type="Direction" label="持仓方向" description="仓位的多空标记"/>
+            <Field name="OpenPriceAvg" type="Price" label="开仓均价" description="这笔持仓开仓时的价格"/>
+            <Field name="RealVolume" type="Volume" label="实时持仓手数" description="可以用于平仓的手数"/>
+            <Field name="FrozenVolume" type="Volume" label="冻结持仓手数" description="暂时已被使用的手数"/>
+            <Field name="HoldMargin" type="Money" label="持仓保证金" description="在当前市场下持仓保证金"/>
+        </Entity>
+        <Entity name="RealFund" title="盘中资金记录器" description="说明一个投资者在一个合约上的持仓状态">
+            <Field name="InvestorID" type="InvestorID" label="投资者代码" description="资金的所有者"/>
+            <Field name="LastEquity" type="Money" label="上日权益" description="客户的上日资产总值"/>
+            <Field name="Equity" type="Money" label="总权益" description="客户的资产总值"/>
+            <Field name="AvailableFund" type="Money" label="可用资金" description="可以用于开仓的资金"/>
+            <Field name="FrozenMargin" type="Money" label="冻结保证金" description="冻结的用于报单的保证金"/>
+            <Field name="FrozenFee" type="Money" label="冻结手续费" description="冻结的用于报单的手续费"/>
+            <Field name="Fee" type="Money" label="交易手续费" description="因为开平仓而产生的中介手续费"/>
+            <Field name="CloseProfit" type="Money" label="平仓盈亏" description="平仓以后产生的盈亏"/>
+            <Field name="HoldProfit" type="Money" label="持仓盈亏" description="持仓产生的动态盈亏"/>
+            <Field name="Margin" type="Money" label="持仓保证金" description="持仓保证金"/>
+            <Field name="FundIn" type="Money" label="出金" description="出金"/>
+            <Field name="FundOut" type="Money" label="入金" description="入金"/>
+        </Entity>
+        <Entity name="SubInstrument" title="订阅的合约包" description="说明一组需要订阅的合约。">
+            <Field name="InstrumentID" type="InstrumentID" label="合约代码" description="持仓所在的合约"/>
+        </Entity>
+        <Entity name="LogConfig" title="日志配置信息" description="从配置文件获取的日志配置">
+            <Field name="LogOutputType" type="LogOutputType" label="日志输出类型" description="日志输出的对象类型"/>
+            <Field name="LogLevel" type="LogLevel" label="日志级别" description="日志的输出级别"/>
+            <Field name="LogPath" type="Path" label="日志路径" description="日志输出文件或者流的存放路径"/>
+        </Entity>
+    </Entitys>
+    <!-- 根据业务定义消息报文 -->
+    <Messages>
+        <msg	name="MarketDataProvider" tpid="2" label="行情提供者" description="行情提供者配置信息">
+            <Entity name="ConnectionConfig"/>
+        </msg>
+        <msg	name="Investor" tpid="3" label="投资者" description="投资者">
+            <Entity name="Investor"/>
+        </msg>
+        <msg	name="MarketData" tpid="4" label="行情" description="系统接收到的行情数据">
+            <Entity name="MarketData"/>
+        </msg>
+        <msg	name="KDJ" tpid="5" label="KDJ指标" description="KDJ指标">
+            <Entity name="KDJ"/>
+        </msg>
+        <msg	name="MACD" tpid="6" label="MACD指标" description="MACD指标">
+            <Entity name="MACD"/>
+        </msg>
+        <msg	name="ModelConfigA" tpid="7" label="计算模型A配置" description="计算模型配置">
+            <Entity name="ModelConfigA"/>
+        </msg>
+        <msg	name="ReqOrder" tpid="8" label="报单请求" description="报单请求">
+            <Entity name="Order"/>
+        </msg>
+        <msg	name="Trade" tpid="9" label="成交" description="成交">
+            <Entity name="Trade"/>
+        </msg>
+        <msg	name="RealPosition" tpid="10" label="盘中仓位" description="盘中仓位">
+            <Entity name="RealPosition"/>
+        </msg>
+        <msg	name="RealFund" tpid="11" label="盘中资金" description="盘中资金">
+            <Entity name="RealFund"/>
+        </msg>
+        <msg	name="SubInstrument" tpid="12" label="订阅的合约包" description="订阅的合约包">
+            <Entity name="SubInstrument"/>
+        </msg>
+        <msg	name=" Singnal" tpid="13" label="交易信号" description="交易信号">
+            <Entity name="Singnal"/>
+        </msg>
+        <msg	name="Instrument" tpid="14" label="合约" description="合约">
+            <Entity name="Instrument"/>
+        </msg>
+        <msg	name="RiskControler" tpid="15" label="风险管理器" description="风险管理其配置">
+            <Entity name="RiskControler"/>
+        </msg>
+        <msg	name="MoneyChange" tpid="16" label="出入金" description="帐户的出入金">
+            <Entity name="MoneyChange"/>
+        </msg>
+        <msg	name="NewTradingDay" tpid="17" label="新交易日" description="新交易日">
+            <Entity name="NewTradingDay"/>
+        </msg>
+        <msg	name="RspOrder" tpid="18" label="报单响应" description="报单响应">
+            <Entity name="Order"/>
+        </msg>
+        <msg	name="MarginRate" tpid="19" label="合约保证金率" description="合约保证金率">
+            <Entity name="MarginRate"/>
+        </msg>
+        <msg	name="FeeRate" tpid="20" label="合约手续费率" description="合约手续费率">
+            <Entity name="FeeRate"/>
+        </msg>
+        <msg	name="LogConfig" tpid="21" label="日志配置信息" description="日志配置信息">
+            <Entity name="LogConfig"/>
+        </msg>
+    </Messages>
+    <DB>
+        <Table name="Log" label="日志信息" description="日志信息描述">
+            <Entity name="Log"/>
+        </Table>
+    </DB>
+</Model>

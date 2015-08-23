@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="BaseType.xml" />
+    <None Include="Model.xml" />
+    <None Include="GenFile" />
+    <None Include="LogDefine.xml" />
+    <None Include="config.xml" />
+    <None Include="xslt\cpp\dataRouteCpp.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\TypeDefine.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\dataRouteH.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\gen.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\hasReaderCsvCPP.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\hasReaderCsvH.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\hasWriterCsvCPP.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\hasWriterCsvH.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\LogDefine.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\stdLogCpp.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\stdLogH.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\Structs.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\tEndPointCPP.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\tEndPointH.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\test.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\tPackageFactoryCPP.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+    <None Include="xslt\cpp\tPackageFactoryH.xslt">
+      <Filter>xslt\cpp</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xsd Include="BaseType.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="xslt">
+      <UniqueIdentifier>{1d9b8bc9-8fea-453d-b585-643cb0c37b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="xslt\cpp">
+      <UniqueIdentifier>{51b00b94-f031-4e71-84e9-bbab3ad824f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

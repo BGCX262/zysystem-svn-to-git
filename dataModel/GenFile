@@ -1,0 +1,39 @@
+all:clean gen
+clean:
+	del .\generate /Q
+	del ..\server\source\generate /Q
+gen:	
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\tPackageFactoryH.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\tPackageFactoryCPP.xslt
+	copy .\generate\CTPackageFactory.* ..\server\source\dataRoute /Y
+	del .\generate\CTPackageFactory.* /Q
+
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\tEndPointH.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\tEndPointCPP.xslt
+	copy .\generate\TEndPoint.* ..\server\source\dataRoute /Y
+	del .\generate\TEndPoint.* /Q
+
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\dataRouteH.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\dataRouteCPP.xslt
+	copy .\generate\CDataRoute.* ..\server\source\dataRoute /Y
+	del .\generate\CDataRoute.* /Q
+
+	.\SaxonHE9.3N\Transform -s:LogDefine.xml -xsl:.\xslt\cpp\LogDefine.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\stdLogH.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\stdLogCpp.xslt
+	copy .\generate\CStdLog.* ..\server\source\log /Y
+	del .\generate\CStdLog.* /Q
+	copy .\generate\LogDefine.h ..\server\source\log /Y
+	del .\generate\LogDefine.h /Q
+	
+	.\SaxonHE9.3N\Transform -s:BaseType.xml -xsl:.\xslt\cpp\TypeDefine.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\Structs.xslt
+	
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\hasWriterCsvH.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\hasWriterCsvCPP.xslt
+	
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\hasReaderCsvH.xslt
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\hasReaderCsvCPP.xslt
+	
+	.\SaxonHE9.3N\Transform -s:Model.xml -xsl:.\xslt\cpp\gen.xslt
+	copy .\generate  ..\server\source\generate /Y

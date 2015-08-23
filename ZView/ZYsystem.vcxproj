@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FFF26BAD-9D1C-4141-AE12-10605E748FA3}</ProjectGuid>
+    <RootNamespace>ZYsystem</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>ZView</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)lib;$(ProjectDir)lib\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)lib\tinyxpath;$(ProjectDir)lib\boost\stage\lib;$(ProjectDir)lib\tradeApi;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(ProjectDir)lib;$(ProjectDir)lib\boost;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)lib\boost\stage\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SourcePath)</SourcePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>stdAfx.h</PrecompiledHeaderFile>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>thostmduserapi.lib;thosttraderapi.lib;tinyxpathd.lib;uafxcwd.lib;libcmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <TargetMachine>MachineX86</TargetMachine>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <IgnoreSpecificDefaultLibraries>Libcmt.lib;</IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ShowProgress>NotSet</ShowProgress>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="boost.txt" />
+    <None Include="res\menu.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="res\paneicons.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\ZYsystem.ico" />
+    <None Include="res\ZYsystem.rc2" />
+    <None Include="res\ZYsystemDoc.ico" />
+    <None Include="server\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChildFrame.h" />
+    <ClInclude Include="controls\XTPRibbonBarZ.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="server\calculator\CalculatorModel.h" />
+    <ClInclude Include="server\calculator\CalculatorModelA.h" />
+    <ClInclude Include="server\connector\ASPConnector.h" />
+    <ClInclude Include="server\connector\Connector.h" />
+    <ClInclude Include="server\connector\HisConnector.h" />
+    <ClInclude Include="server\connector\MDOnlyConnector.h" />
+    <ClInclude Include="server\connector\SimConnector.h" />
+    <ClInclude Include="server\ctpSpi\CtpMDSpi.h" />
+    <ClInclude Include="server\ctpSpi\CtpTradeSpi.h" />
+    <ClInclude Include="server\dataRoute\CDataRoute.h" />
+    <ClInclude Include="server\dataRoute\CTPackageFactory.h" />
+    <ClInclude Include="server\dataRoute\MsgQueue.h" />
+    <ClInclude Include="server\dataRoute\TEndPoint.h" />
+    <ClInclude Include="server\dataRoute\TPackage.h" />
+    <ClInclude Include="server\generate\CKDJWriter.h" />
+    <ClInclude Include="server\generate\CMACDWriter.h" />
+    <ClInclude Include="server\generate\CMarketDataReader.h" />
+    <ClInclude Include="server\generate\CMarketDataWriter.h" />
+    <ClInclude Include="server\generate\COrderReqWriter.h" />
+    <ClInclude Include="server\generate\COrderRspWriter.h" />
+    <ClInclude Include="server\generate\CSingnalWriter.h" />
+    <ClInclude Include="server\generate\CTradeWriter.h" />
+    <ClInclude Include="server\generate\Gen.h" />
+    <ClInclude Include="server\generate\Structs.h" />
+    <ClInclude Include="server\generate\TypeDefine.h" />
+    <ClInclude Include="server\index\CIndexKDJ.h" />
+    <ClInclude Include="server\index\CIndexMACD.h" />
+    <ClInclude Include="server\log\CStdLog.h" />
+    <ClInclude Include="server\log\FileLogger.h" />
+    <ClInclude Include="server\log\LogDefine.h" />
+    <ClInclude Include="server\log\ScreenLogger.h" />
+    <ClInclude Include="server\System.h" />
+    <ClInclude Include="server\tcore\TCore.h" />
+    <ClInclude Include="server\tcore\TDataService.h" />
+    <ClInclude Include="server\tcore\TDataSet.h" />
+    <ClInclude Include="server\util\CMDBufferQueue.h" />
+    <ClInclude Include="server\util\CTimeTranslator.h" />
+    <ClInclude Include="server\util\DataFile.h" />
+    <ClInclude Include="server\xml\CConfigXml.h" />
+    <ClInclude Include="server\xml\CXML.h" />
+    <ClInclude Include="server\ZYSystemMain.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="view\FundPane.h" />
+    <ClInclude Include="view\IndexDataPane.h" />
+    <ClInclude Include="view\IndexGraphPane.h" />
+    <ClInclude Include="view\MarketDataPane.h" />
+    <ClInclude Include="view\OutputPane.h" />
+    <ClInclude Include="view\OrderPane.h" />
+    <ClInclude Include="view\SignarPane.h" />
+    <ClInclude Include="view\TradePane.h" />
+    <ClInclude Include="ZYsystem.h" />
+    <ClInclude Include="ZYsystemDoc.h" />
+    <ClInclude Include="ZYsystemView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChildFrame.cpp" />
+    <ClCompile Include="controls\XTPRibbonBarZ.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="server\calculator\CalculatorModel.cpp" />
+    <ClCompile Include="server\calculator\CalculatorModelA.cpp" />
+    <ClCompile Include="server\connector\ASPConnector.cpp" />
+    <ClCompile Include="server\connector\Connector.cpp" />
+    <ClCompile Include="server\connector\HisConnector.cpp" />
+    <ClCompile Include="server\connector\MDOnlyConnector.cpp" />
+    <ClCompile Include="server\connector\SimConnector.cpp" />
+    <ClCompile Include="server\ctpSpi\CtpMDSpi.cpp" />
+    <ClCompile Include="server\ctpSpi\CtpTradeSpi.cpp" />
+    <ClCompile Include="server\dataRoute\CDataRoute.cpp" />
+    <ClCompile Include="server\dataRoute\CTPackageFactory.cpp" />
+    <ClCompile Include="server\dataRoute\MsgQueue.cpp" />
+    <ClCompile Include="server\dataRoute\TEndPoint.cpp" />
+    <ClCompile Include="server\dataRoute\TPackage.cpp" />
+    <ClCompile Include="server\generate\CKDJWriter.cpp" />
+    <ClCompile Include="server\generate\CMACDWriter.cpp" />
+    <ClCompile Include="server\generate\CMarketDataReader.cpp" />
+    <ClCompile Include="server\generate\CMarketDataWriter.cpp" />
+    <ClCompile Include="server\generate\COrderReqWriter.cpp" />
+    <ClCompile Include="server\generate\COrderRspWriter.cpp" />
+    <ClCompile Include="server\generate\CSingnalWriter.cpp" />
+    <ClCompile Include="server\generate\CTradeWriter.cpp" />
+    <ClCompile Include="server\index\CIndexKDJ.cpp" />
+    <ClCompile Include="server\index\CIndexMACD.cpp" />
+    <ClCompile Include="server\log\CStdLog.cpp" />
+    <ClCompile Include="server\log\FileLogger.cpp" />
+    <ClCompile Include="server\log\ScreenLogger.cpp" />
+    <ClCompile Include="server\tcore\TCore.cpp" />
+    <ClCompile Include="server\tcore\TDataService.cpp" />
+    <ClCompile Include="server\tcore\TDataSet.cpp" />
+    <ClCompile Include="server\util\CTimeTranslator.cpp" />
+    <ClCompile Include="server\util\DataFile.cpp" />
+    <ClCompile Include="server\xml\CConfigXml.cpp" />
+    <ClCompile Include="server\xml\CXML.cpp" />
+    <ClCompile Include="server\ZYSystemMain.cpp" />
+    <ClCompile Include="server\ZYSystemServerLoader.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="view\FundPane.cpp" />
+    <ClCompile Include="view\IndexDataPane.cpp" />
+    <ClCompile Include="view\IndexGraphPane.cpp" />
+    <ClCompile Include="view\MarketDataPane.cpp" />
+    <ClCompile Include="view\OutputPane.cpp" />
+    <ClCompile Include="view\OrderPane.cpp" />
+    <ClCompile Include="view\SignarPane.cpp" />
+    <ClCompile Include="view\TradePane.cpp" />
+    <ClCompile Include="ZYsystem.cpp" />
+    <ClCompile Include="ZYsystemDoc.cpp" />
+    <ClCompile Include="ZYsystemView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ZYsystem.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1 @@
+b2 stage toolset=msvc variant=debug,release link=static address-model=32 runtime-link=shared,static threading=multi --build-type=complete

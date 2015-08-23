@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTypes>
+    <Int typename="ID" label="唯一序号" length="3"/>
+    <Int typename="PID" label="消息包的类型识别码" length="3"/>
+    <Int typename="PLength" label="消息包长度" length="3"/>
+    <Int typename="QueueIndex" label="消息队列的索引" length="10"/>
+    <Int typename="LocalOrderID" label="本地报单编号" length="3"/>
+    <String typename="Date" label="日期" length="8"/>
+    <String typename="Time" label="时间" length="8"/>
+    <String typename="DateTime" label="日期时间" length="15"/>
+    <String typename="URL" label="连接字符串" length="120"/>
+    <String typename="InstrumentIDs" label="合约代码串，用于订阅合约" length="300"/>
+    <String typename="File" label="文件路径，包含文件名" length="256"/>
+    <String typename="XPath" label="XPath查询字符串" length="80"/>
+    <String typename="XPathValue" label="XPath查询返回值" length="60"/>
+    <String typename="Path" label="路径，包含不文件名" length="200"/>
+    <String typename="Memo" label="备注" length="256"/>
+    <String typename="Code" label="代码" length="50"/>
+    <Float typename="Ratio" label="比率" length="19" precision="8" />
+    <Float typename="Money" label="资金" length="19" precision="6" />
+    <Float typename="Price" label="价格" length="12" precision="3"/>
+    <Int typename="Volume" label="数量" length="10"/>
+    <Float typename="LargeVolume" length="19" precision="3" label="大额数量"/>
+    <Int typename="Millisec" label="毫秒" length="3"/>
+    <String typename="ExchangeID" label="交易所代码" length="8"/>
+    <String typename="InstrumentID" label="合约代码" length="30"/>
+    <String typename="ConnectionID" label="连接代码" length="10"/>
+    <String typename="BrokerID" label="经纪公司代码" length="10"/>
+    <String typename="InvestorID" label="投资者代码" length="12"/>
+    <String typename="Password" label="密码" length="40"/>
+    <EnumChar typename="MarketDataType" label="行情来源类型" prefix="MDT">
+        <Enum name="Sfit" value="1" label="上期技术"/>
+        <Enum name="His" value="2" label="历史行情重演"/>
+        <Enum name="Sim" value="3" label="模拟交易"/>
+        <Enum name="OnlyMD" value="4" label="仅收行情"/>
+    </EnumChar>
+    <Float typename="IndexValue" label="计算模型的指标" length="10" precision="3" />
+    <Int typename="TimeCycle" label="时间缩放比例(秒)" length="10"/>
+    <EnumChar typename="Direction" label="买卖方向" prefix="D">
+        <Enum name="Buy" value="0" label="买"/>
+        <Enum name="Sell" value="1" label="卖"/>
+    </EnumChar>
+    <EnumChar typename="OffsetFlag" label="开平标志" prefix="OF">
+        <Enum name="Open" value="0" label="开仓"/>
+        <Enum name="Close" value="1" label="平仓"/>
+        <Enum name="ForceClose" value="2" label="强平"/>
+        <Enum name="CloseToday" value="3" label="平今"/>
+        <Enum name="CloseYesterday" value="4" label="平昨"/>
+        <Enum name="ForceOff" value="5" label="强减"/>
+        <Enum name="LocalForceClose" value="6" label="本地强平"/>
+    </EnumChar>
+    <EnumChar typename="HedgeFlag" label="投机套保标志" prefix="HF">
+        <Enum name="Speculation" value="1" label="投机"/>
+        <Enum name="Arbitrage" value="2" label="套利"/>
+        <Enum name="Hedge" value="3" label="套保"/>
+    </EnumChar>
+    <EnumChar typename="ModelType" label="模型类型" prefix="MT">
+        <Enum name="A" value="1" label="模型A"/>
+    </EnumChar>
+    <EnumChar typename="RunModel" label="运行模式" prefix="RM">
+        <Enum name="Normal" value="1" label="正常交易"/>
+        <Enum name="Receive" value="2" label="行情接收"/>
+        <Enum name="Repeat" value="3" label="重演"/>
+    </EnumChar>
+    <EnumChar typename="LogLevel" label="日志输出级别" prefix="LL">
+        <Enum name="SysHalt" value="0" label="系统失败"/>
+        <Enum name="Alert" value="1" label="系统警报"/>
+        <Enum name="Error" value="2" label="运行错误"/>
+        <Enum name="Warning" value="3" label="运行警告"/>
+        <Enum name="Info" value="4" label="运行信息"/>
+        <Enum name="Debug" value="5" label="调试信息"/>
+    </EnumChar>
+    <EnumChar typename="FundDirection" label="出入金方向" prefix="FD">
+        <Enum name="In" value="1" label="入金"/>
+        <Enum name="Out" value="2" label="出金"/>
+    </EnumChar>
+    <EnumChar typename="SingnalReason" label="交易信号来源" prefix="SR">
+        <Enum name="RiskControler" value="1" label="风险控制"/>
+        <Enum name="ModelA" value="2" label="交易模型A"/>
+    </EnumChar>
+    <EnumChar typename="OrderStatus" label="报单状态" prefix="OST">
+        <Enum name="AllTraded" value="0" label="全部成交"/>
+        <Enum name="PartTradedQueueing" value="1" label="部分成交还在队列中"/>
+        <Enum name="PartTradedNotQueueing" value="2" label="部分成交不在队列中"/>
+        <Enum name="NoTradeQueueing" value="3" label="未成交还在队列中"/>
+        <Enum name="NoTradeNotQueueing" value="4" label="未成交不在队列中"/>
+        <Enum name="Canceled" value="5" label="撤单"/>
+        <Enum name="Unknown" value="6" label="未知"/>
+        <Enum name="NotTouched" value="7" label="尚未触发"/>
+        <Enum name="Touched" value="8" label="已触发"/>
+    </EnumChar>
+    <EnumChar typename="OrderSubmitStatus" label="报单提交状态" prefix="OSS">
+        <Enum name="InsertSubmitted" value="0" label="已经提交"/>
+        <Enum name="CancelSubmitted" value="1" label="撤单已经提交"/>
+        <Enum name="ModifySubmitted" value="2" label="修改已经提交"/>
+        <Enum name="Accepted" value="3" label="已经接受"/>
+        <Enum name="InsertRejected" value="4" label="报单已经被拒绝"/>
+        <Enum name="CancelRejected" value="5" label="撤单已经被拒绝"/>
+        <Enum name="ModifyRejected" value="6" label="改单已经被拒绝"/>
+    </EnumChar>
+    <EnumChar typename="LogOutputType" label="报单提交状态" prefix="LOT">
+        <Enum name="ScreenOutput" value="1" label="屏幕输出"/>
+        <Enum name="FileOutput" value="2" label="文件输出"/>
+    </EnumChar>
+</DataTypes>

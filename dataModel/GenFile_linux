@@ -1,0 +1,15 @@
+all:clean gen
+
+clean:
+	rm -rf ./generate/*
+	rm -rf ../server/source/generate/*
+
+gen:	
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:BaseType.xml -xsl:TypeDefine.xslt
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:Model.xml -xsl:Model.xslt
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:Model.xml -xsl:hasWriterCsvH.xslt
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:Model.xml -xsl:hasWriterCsvCPP.xslt
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:Model.xml -xsl:hasReaderCsvH.xslt
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:Model.xml -xsl:hasReaderCsvCPP.xslt
+	java -cp saxon9he.jar net.sf.saxon.Transform -t -s:Model.xml -xsl:gen.xslt
+	cp ./generate/* ../server/source/generate/

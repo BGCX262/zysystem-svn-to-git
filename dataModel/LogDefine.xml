@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<logs>
+  <log_group sub_system_code="MAIN" sub_system_id="1" log="true">
+    <log logID="001" logCode="NoConfigFile" logLevel="LL_Debug" logMsg="没有能打开配置文件,请检查配置文件%s是否存在"/>
+    <log logID="002" logCode="ConfigFileFound" logLevel="LL_Debug" logMsg="找到配置文件%s"/>
+    <log logID="003" logCode="ConfigFileErr" logLevel="LL_Debug" logMsg="配置文件中有错:%s"/>
+    <log logID="004" logCode="ConfigFileSvrNumber" logLevel="LL_Debug" logMsg="在配置文件中发现了%d个服务器"/>
+    <log logID="005" logCode="MdrLoadSucc" logLevel="LL_Debug" logMsg="成功:加载第%d个行情接收器"/>
+    <log logID="006" logCode="MdrLoadFail" logLevel="LL_Debug" logMsg="失败:加载第%d个行情接收器"/>
+    <log logID="007" logCode="MdrLoadFinish" logLevel="LL_Debug" logMsg="完成:行情接收器加载"/>
+    <log logID="008" logCode="ConfigFileInvNumber" logLevel="LL_Debug" logMsg="在配置文件中发现了%d个投资者"/>
+    <log logID="009" logCode="InvLoadSucc" logLevel="LL_Debug" logMsg="成功:加载第%d个投资者"/>
+    <log logID="010" logCode="InvLoadFail" logLevel="LL_Debug" logMsg="失败:加载第%d个投资者"/>
+    <log logID="011" logCode="InvLoadFinish" logLevel="LL_Debug" logMsg="完成:投资者加载"/>
+    <log logID="012" logCode="XpathValueErr" logLevel="LL_Debug" logMsg="错误:xmlpath:%s"/>
+    <log logID="013" logCode="LogPath" logLevel="LL_Debug" logMsg="完成:日志的路径是%s"/>
+    <log logID="014" logCode="MdrInstrument" logLevel="LL_Debug" logMsg="发现:此行情配置了%d个合约"/>
+  </log_group>
+  <log_group sub_system_code="PROTFOLIO" sub_system_id="2" log="true">
+    <log logID="002" logLevel="LL_Debug" logCode="NotEnoughPoistion" logMsg="持仓不足"/>
+    <log logID="003" logLevel="LL_Debug" logCode="NotFindPosition" logMsg="没有找到持仓"/>
+    <log logID="004" logLevel="LL_Debug" logCode="OpenOrderNotFrozen" logMsg="没有找到持仓"/>
+    <log logID="005" logLevel="LL_Debug" logCode="FrozenedPositionNotEnough" logMsg="可解冻仓位不足"/>
+    <log logID="006" logLevel="LL_Debug" logCode="PositionNotEnoughToFrozen" logMsg="可冻结仓位不足"/>
+    <log logID="007" logLevel="LL_Debug" logCode="OpenNotFrozen" logMsg="开仓指令不可用于解冻持仓"/>
+    <log logID="008" logLevel="LL_Debug" logCode="OpenNotUnfrozen" logMsg="开仓指令不可用于冻结持仓"/>
+    <log logID="009" logLevel="LL_Debug" logCode="FrozenedMoneyNotEnough" logMsg="冻结的资金不足"/>
+    <log logID="010" logLevel="LL_Debug" logCode="NotFindInsturmentBySingnal" logMsg="以交易信号为条件没有找到对应的合约设置"/>
+    <log logID="011" logLevel="LL_Debug" logCode="InsturmentsNull" logMsg="合约集合为空"/>
+    <log logID="012" logLevel="LL_Debug" logCode="OrdersNull" logMsg="报单集合为空"/>
+    <log logID="013" logLevel="LL_Debug" logCode="NotFindOrderByTrade" logMsg="以成交为条件没有找到对应的报单"/>
+    <log logID="014" logLevel="LL_Debug" logCode="MarginNotEnough" logMsg="占用的保证金不足"/>
+    <log logID="015" logLevel="LL_Debug" logCode="NotFindInsturmentByTrade" logMsg="以成交为条件没有找到对应的合约设置"/>
+  </log_group>
+  <log_group sub_system_code="CONNECTOR" sub_system_id="3" log="true">
+    <log logID="001" logLevel="LL_Debug" logCode="HIS_TradingDayIs" logMsg="历史交易日是：%s"/>
+    <log logID="002" logLevel="LL_Debug" logCode="NewMDIsEmpty" logMsg="新行情为空"/>
+    <log logID="003" logLevel="LL_Debug" logCode="CtpMDIsEmpty" logMsg="CTP行情对象为空"/>
+    <log logID="004" logLevel="LL_Debug" logCode="CtpTradeIsEmpty" logMsg="CTP交易对象为空"/>
+  </log_group>
+  <log_group sub_system_code="DATAROUTE" sub_system_id="4" log="true">
+    <log logID="001" logLevel="LL_Debug" logCode="MsgQueClosed" logMsg="消息队列已经关闭了"/>
+    <log logID="002" logLevel="LL_Debug" logCode="MsgEmpty" logMsg="空消息对象"/>
+    <log logID="003" logLevel="LL_Debug" logCode="MsgQueMaxSizeLessOne" logMsg="消息队列最大长度小于1。"/>
+    <log logID="004" logLevel="LL_Debug" logCode="QueSizeAfterPush" logMsg="QueSizeAfterPush:%d "/>
+    <log logID="005" logLevel="LL_Debug" logCode="QueSizeAfterPop" logMsg="QueSizeAfterPop:%d "/>
+  </log_group>
+  <log_group sub_system_code="SPI" sub_system_id="5" log="true">
+    <log logID="001" logLevel="LL_Debug" logCode="MD_Connected" logMsg="CTP行情服务器连接成功"/>
+    <log logID="002" logLevel="LL_Debug" logCode="MD_Disconnected" logMsg="CTP行情服务器已经断开"/>
+    <log logID="003" logLevel="LL_Debug" logCode="MD_LoginSucc" logMsg="登录到CTP行情服务器"/>
+    <log logID="004" logLevel="LL_Debug" logCode="MD_LoginFail" logMsg="登录CTP行情服务器失败"/>
+    <log logID="005" logLevel="LL_Debug" logCode="MD_ServerErr" logMsg="CTP行情服务器错误：%s"/>
+    <log logID="006" logLevel="LL_Debug" logCode="MD_NewInsturments" logMsg="CTP行情服务器订阅了新合约：%s"/>
+    <log logID="007" logLevel="LL_Debug" logCode="MD_TradingDayIs" logMsg="CTP行情服务器的交易日是：%s"/>
+    <log logID="008" logLevel="LL_Debug" logCode="T_Connected" logMsg="CTP交易服务器连接成功"/>
+    <log logID="009" logLevel="LL_Debug" logCode="T_Disconnected" logMsg="CTP交易服务器已经断开:%d"/>
+    <log logID="010" logLevel="LL_Debug" logCode="T_LoginSucc" logMsg="CTP登录到交易服务器"/>
+    <log logID="011" logLevel="LL_Debug" logCode="T_LoginFail" logMsg="CTP登录交易服务器失败"/>
+    <log logID="012" logLevel="LL_Debug" logCode="T_ServerErr" logMsg="CTP交易服务器错误：[%d]%s"/>
+    <log logID="013" logLevel="LL_Debug" logCode="T_TradingDayIs" logMsg="CTP交易服务器的交易日是：%s"/>
+    <log logID="014" logLevel="LL_Debug" logCode="T_SettInfoConfirmSucc" logMsg="CTP结算单信息确认成功"/>
+    <log logID="015" logLevel="LL_Debug" logCode="T_SettInfoConfirmFail" logMsg="CTP结算单信息确认失败"/>
+    <log logID="016" logLevel="LL_Debug" logCode="T_QryInstrumentSucc" logMsg="查询CTP合约成功"/>
+    <log logID="017" logLevel="LL_Debug" logCode="T_QryInstrumentFail" logMsg="查询CTP合约失败"/>
+    <log logID="018" logLevel="LL_Debug" logCode="T_QryInstrumentFC" logMsg="查询CTP合约受到流控"/>
+    <log logID="019" logLevel="LL_Debug" logCode="T_QryTradingAccountSucc" logMsg="查询CTP资金账户成功"/>
+    <log logID="020" logLevel="LL_Debug" logCode="T_QryTradingAccountFail" logMsg="查询CTP资金账户失败"/>
+    <log logID="021" logLevel="LL_Debug" logCode="T_QryTradingAccountFC" logMsg="查询CTP资金账户受到流控"/>
+    <log logID="022" logLevel="LL_Debug" logCode="T_QryInvestorPositionSucc" logMsg="查询CTP投资者持仓成功"/>
+    <log logID="023" logLevel="LL_Debug" logCode="T_QryInvestorPositionFail" logMsg="查询CTP投资者持仓失败"/>
+    <log logID="024" logLevel="LL_Debug" logCode="T_QryInvestorPositionFC" logMsg="查询CTP投资者持仓受到流控"/>
+    <log logID="025" logLevel="LL_Debug" logCode="T_OrderInsertSucc" logMsg="CTP报单录入成功"/>
+    <log logID="026" logLevel="LL_Debug" logCode="T_OrderInsertFail" logMsg="CTP报单录入失败"/>
+    <log logID="027" logLevel="LL_Debug" logCode="T_OrderActionSucc" logMsg="CTP报单操作成功"/>
+    <log logID="028" logLevel="LL_Debug" logCode="T_OrderActionFail" logMsg="CTP报单操作失败"/>
+    <log logID="029" logLevel="LL_Debug" logCode="T_RtnOrder" logMsg="收到CTP报单响应"/>
+    <log logID="030" logLevel="LL_Debug" logCode="T_OrderCanceled" logMsg="CTP撤单成功"/>
+    <log logID="031" logLevel="LL_Debug" logCode="T_RtnTrade" logMsg="收到CTP成交响应"/>
+    <log logID="032" logLevel="LL_Debug" logCode="T_HeartBeat" logMsg="CTP心跳:%d"/>
+  </log_group>
+  <log_group sub_system_code="TCORE" sub_system_id="6" log="true">
+    <log logID="001" logLevel="LL_Debug" logCode="DS_RealFundSelectByInvestorIDFatal" logMsg="基于InvestorID定位RealFund失败"/>
+    <log logID="002" logLevel="LL_Debug" logCode="DS_NotEnoughAvailableForOut" logMsg="用于出金的可用资金不足"/>
+    <log logID="003" logLevel="LL_Debug" logCode="ModelInIsNull" logMsg="送入的模型指针为空"/>
+    <log logID="004" logLevel="LL_Debug" logCode="DS_OrderReqSelectByLocalOrderIDFatal" logMsg="基于LocalOrderID定位OrderReq失败"/>
+    <log logID="005" logLevel="LL_Debug" logCode="DS_InstrumentSelectByInstrumentIDFatal" logMsg="基于InstrumentID定位Instrument失败"/>
+    <log logID="006" logLevel="LL_Debug" logCode="DS_MarginRateSelectByInvestorIDInstrumentIDFatal" logMsg="基于InvestorID、InstrumentID定位MarginRate失败"/>
+    <log logID="007" logLevel="LL_Debug" logCode="DS_FeeRateSelectByInvestorIDInstrumentIDFatal" logMsg="基于InvestorID、InstrumentID定位FeeRate失败"/>
+    <log logID="008" logLevel="LL_Debug" logCode="DS_RealPositionSelectByInvestorIDInstrumentIDDirectionFatal" logMsg="基于InvestorID、InstrumentID定位RealPosition失败"/>
+  </log_group>
+</logs>

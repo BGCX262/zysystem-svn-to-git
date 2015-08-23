@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--ZY System Server config\-->
+<config>
+    <server_id>4</server_id>
+    <instruments>y1309</instruments>
+    <!-- 日志配置 -->
+    <log>
+        <log_type>1</log_type>
+        <!-- 日志路径1:屏幕输出，2文件输出 -->
+        <log_path>./LOG/</log_path>
+        <log_level>7</log_level>
+    </log>    
+    <!-- 数据文件路径 -->
+    <data_path>./DATA/</data_path>
+    <!--server address list-->
+    <connections>
+        <!-- a server address:交易行情连接-->
+        <connection>
+            <!-- server's id is the identification code of server,unique,not null-->
+            <conn_id>1</conn_id>
+            <!-- server's url,maybe is Domain Name or ip addrees -->
+            <td_url>tcp://gwf-md1.financial-trading-platform.com:41213</td_url>
+            <md_url>tcp://asp-sim1-front2.financial-trading-platform.com:41213</md_url>
+            <!-- server's type,0:CTP -->
+            <conn_type>1</conn_type>
+            <!-- 绑定的投资者 -->
+            <investor_id>10101685</investor_id>
+            <!-- 投资者的密码 -->
+            <investor_password>88888</investor_password>
+            <!-- 期货公司代码 -->
+            <broker_id>2464</broker_id>
+        </connection>
+        <!--历史行情重演-->
+        <connection>
+            <conn_id>2</conn_id>
+            <td_url>35000,y1209,10,0.15,0,0,8,0,8,0,8</td_url>
+            <md_url>./DATA/,20111101</md_url>
+            <conn_type>2</conn_type>
+            <investor_id>10101685</investor_id>
+        </connection>
+        <!--模拟交易-->
+        <connection>
+            <conn_id>3</conn_id>
+            <td_url>tcp://asp-sim2-md1.financial-trading-platform.com:26213</td_url>
+            <md_url>tcp://asp-sim2-md1.financial-trading-platform.com:26213</md_url>
+            <conn_type>3</conn_type>
+            <investor_id>00092</investor_id>
+        </connection>
+        <!--仅收行情-->
+        <connection>
+            <conn_id>4</conn_id>
+            <td_url>tcp://gwf-md1.financial-trading-platform.com:41213</td_url>
+            <md_url></md_url>
+            <conn_type>4</conn_type>
+            <investor_id>10101685</investor_id>
+        </connection>
+    </connections>
+    <riskControler>
+        <fullPrice>20</fullPrice>
+        <stopLossPrice>5</stopLossPrice>
+    </riskControler>
+    <models>
+        <model>
+            <investor_id>10101685</investor_id>
+            <time_cycle>60</time_cycle>
+            <model_type>1</model_type>
+            <last_Idx_k>0</last_Idx_k>
+            <last_Idx_d>0</last_Idx_d>
+            <last_Idx_j>0</last_Idx_j>
+            <last_Idx_diff>0</last_Idx_diff>
+            <last_Idx_dea>0</last_Idx_dea>
+            <last_Idx_bar>0</last_Idx_bar>
+            <MAX_k>5</MAX_k>
+            <MAX_d>5</MAX_d>
+            <MAX_j>0</MAX_j>
+            <MAX_diff>0</MAX_diff>
+            <MAX_dea>0</MAX_dea>
+            <MAX_bar>0</MAX_bar>
+            <MIN_k>-5</MIN_k>
+            <MIN_d>-5</MIN_d>
+            <MIN_j>0</MIN_j>
+            <MIN_diff>0</MIN_diff>
+            <MIN_dea>0</MIN_dea>
+            <MIN_bar>0</MIN_bar>
+        </model>
+    </models>
+</config>

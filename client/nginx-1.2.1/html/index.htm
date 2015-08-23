@@ -1,0 +1,62 @@
+﻿<html>
+<head>
+    <title>Main</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-language" content="en"/>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="lib/zingChart/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="lib/zingChart/zingchart-html5-min.js"></script>
+    <script type="text/javascript" src="lib/zingChart/license.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        zingchart.render({
+            'id': 'MainK',
+            'output' : 'canvas',
+            'width': 850,
+            'height':600,
+            'dataurl': 'DATA/oneMinute.txt'
+        });
+        
+        //load order
+        $.getJSON('./DATA/Order.txt',function(result){
+        	$.each(result, function(i, field){
+        		var inHtml = '<tr>';
+        		inHtml = inHtml 
+        					 + '<td>' + field.OrderTime + '</td>'
+        					 + '<td>' + field.InstrumentID + '</td>';
+        		if (field.OffsetFlag == '开') {
+        			 inHtml = inHtml + "<td align='left'>" + field.OffsetFlag + '</td>';
+        		} else {
+        			 inHtml = inHtml + "<td align='right'>" + field.OffsetFlag + '</td>';
+        		}
+        		
+        		if (field.Direction == '买') {
+        			 inHtml = inHtml 
+        					 + "<td align='left'>" + field.Direction + '</td>'
+        					 + '<td>' + field.Price + '</td>'
+        					 + '<td>' + field.Volume + '</td>'
+        					 + '</tr>';
+        		} else {
+        			inHtml = inHtml 
+        					 + "<td align='right'>" + field.Direction + '</td>'
+        					 + '<td>' + field.Price + '</td>'
+        					 + '<td>' + field.Volume + '</td>'
+        					 + '</tr>';
+        		}
+        		 
+        		$("#order").append(inHtml);
+    			});
+        });        
+    });
+</script>
+<div class="g" id="MainK"></div>
+<div class="g" id="Order" width='150' height='300'>
+	报单信息
+	<table id="order" class="g">
+		<tr><td>报单时间</td><td>合约</td><td>开/平</td><td>买/卖</td><td>价格</td><td>数量</td></tr>
+	</table>
+</div>
+</body>
+</html>

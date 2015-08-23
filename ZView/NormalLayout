@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DockingPaneLayouts CompactMode="1">
+	<ZYsystem>
+		<Summary Panes="22" TopContainer="9" Client="18"/>
+		<Pane-1 Type="0" DockingCX="500" DockingCY="700" Title="指标图形\n\n" ID="402" DockingHolder="15" LastHolder="15"/>
+		<Pane-2 Type="0" DockingCX="500" DockingCY="700" Title="监控日志\n\n" ID="405" DockingHolder="16" LastHolder="16"/>
+		<Pane-3 Type="0" DockingCX="380" DockingCY="360" Title="即时行情\n\n" ID="403" DockingHolder="11" LastHolder="11"/>
+		<Pane-4 Type="0" DockingCX="380" DockingCY="360" Title="指标数据\n\n" ID="401" DockingHolder="12" LastHolder="12"/>
+		<Pane-5 Type="0" DockingCX="380" DockingCY="360" Title="交易信号\n\n" ID="406" DockingHolder="13" LastHolder="13"/>
+		<Pane-6 Type="0" DockingCX="380" DockingCY="360" Title="资金信息\n\n" ID="400" DockingHolder="20" LastHolder="20"/>
+		<Pane-7 Type="0" DockingCX="380" DockingCY="360" Title="下单指令\n\n" ID="404" DockingHolder="21" LastHolder="21"/>
+		<Pane-8 Type="0" DockingCX="380" DockingCY="360" Title="成交信息\n\n" ID="407" DockingHolder="22" LastHolder="22"/>
+		<Pane-9 Type="2" Horiz="1" Panes="3" Pane-1="10" Pane-2="14" Pane-3="19"/>
+		<Pane-10 Type="2" DockingCX="380" DockingCY="360" Panes="3" Pane-1="11" Pane-2="12" Pane-3="13"/>
+		<Pane-11 Type="1" DockingCX="380" DockingCY="360" Panes="1" Selected="3" Pane-1="3"/>
+		<Pane-12 Type="1" DockingCX="380" DockingCY="360" Panes="1" Selected="4" Pane-1="4"/>
+		<Pane-13 Type="1" DockingCX="380" DockingCY="360" Panes="1" Selected="5" Pane-1="5"/>
+		<Pane-14 Type="2" DockingCX="512" Panes="3" Pane-1="15" Pane-2="16" Pane-3="17"/>
+		<Pane-15 Type="1" DockingCX="500" DockingCY="700" Panes="1" Selected="1" Pane-1="1"/>
+		<Pane-16 Type="1" DockingCX="500" DockingCY="700" Panes="1" Selected="2" Pane-1="2"/>
+		<Pane-17 Type="2" Horiz="1" Panes="1" Pane-1="18"/>
+		<Pane-18 Type="4"/>
+		<Pane-19 Type="2" DockingCX="380" DockingCY="360" Panes="3" Pane-1="20" Pane-2="21" Pane-3="22"/>
+		<Pane-20 Type="1" DockingCX="380" DockingCY="360" Panes="1" Selected="6" Pane-1="6"/>
+		<Pane-21 Type="1" DockingCX="380" DockingCY="360" Panes="1" Selected="7" Pane-1="7"/>
+		<Pane-22 Type="1" DockingCX="380" DockingCY="360" Panes="1" Selected="8" Pane-1="8"/>
+	</ZYsystem>
+</DockingPaneLayouts>

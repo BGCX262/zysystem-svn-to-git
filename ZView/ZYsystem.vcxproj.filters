@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{41d87118-c796-481f-87cd-204811483c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server">
+      <UniqueIdentifier>{8934ac3b-97aa-48b6-b52b-76af0f713338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\calculator">
+      <UniqueIdentifier>{73b57adf-42b0-4bcc-afe5-b7cd00836efd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\connector">
+      <UniqueIdentifier>{7ca9ec39-95fe-4564-b496-10f0522cf372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\ctpSpi">
+      <UniqueIdentifier>{35f6cdea-e039-4a7e-91d2-005e21028efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\dataRoute">
+      <UniqueIdentifier>{b3e603c9-2591-4efa-b69a-dbe0bd75676c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\generate">
+      <UniqueIdentifier>{e4f921f2-d875-4459-b13f-f449a9963798}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\index">
+      <UniqueIdentifier>{74f9dd19-278d-48bd-8b35-c2656a0d20d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\log">
+      <UniqueIdentifier>{89f35f53-1c20-426b-ac5c-501d2c495963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\tcore">
+      <UniqueIdentifier>{51c14401-ae94-4bd9-b92e-703779effcc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\util">
+      <UniqueIdentifier>{fb05cfca-12e4-43fe-99fe-431be23c0c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\xml">
+      <UniqueIdentifier>{09278dec-c797-418e-8649-5641a5a1b872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="controls">
+      <UniqueIdentifier>{f7616ca3-9433-4790-a996-339c6eba4d2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ZYsystem.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ZYsystemDoc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ZYsystem.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\paneicons.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="server\config.xml">
+      <Filter>server</Filter>
+    </None>
+    <None Include="res\menu.xml" />
+    <None Include="boost.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ZYsystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZYsystemView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="view\OutputPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\OrderPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\FundPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\IndexDataPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\SignarPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\TradePane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\MarketDataPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="view\IndexGraphPane.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="server\System.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ZYSystemMain.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="server\calculator\CalculatorModel.h">
+      <Filter>server\calculator</Filter>
+    </ClInclude>
+    <ClInclude Include="server\calculator\CalculatorModelA.h">
+      <Filter>server\calculator</Filter>
+    </ClInclude>
+    <ClInclude Include="server\connector\ASPConnector.h">
+      <Filter>server\connector</Filter>
+    </ClInclude>
+    <ClInclude Include="server\connector\Connector.h">
+      <Filter>server\connector</Filter>
+    </ClInclude>
+    <ClInclude Include="server\connector\HisConnector.h">
+      <Filter>server\connector</Filter>
+    </ClInclude>
+    <ClInclude Include="server\connector\MDOnlyConnector.h">
+      <Filter>server\connector</Filter>
+    </ClInclude>
+    <ClInclude Include="server\connector\SimConnector.h">
+      <Filter>server\connector</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ctpSpi\CtpMDSpi.h">
+      <Filter>server\ctpSpi</Filter>
+    </ClInclude>
+    <ClInclude Include="server\ctpSpi\CtpTradeSpi.h">
+      <Filter>server\ctpSpi</Filter>
+    </ClInclude>
+    <ClInclude Include="server\dataRoute\CDataRoute.h">
+      <Filter>server\dataRoute</Filter>
+    </ClInclude>
+    <ClInclude Include="server\dataRoute\CTPackageFactory.h">
+      <Filter>server\dataRoute</Filter>
+    </ClInclude>
+    <ClInclude Include="server\dataRoute\MsgQueue.h">
+      <Filter>server\dataRoute</Filter>
+    </ClInclude>
+    <ClInclude Include="server\dataRoute\TEndPoint.h">
+      <Filter>server\dataRoute</Filter>
+    </ClInclude>
+    <ClInclude Include="server\dataRoute\TPackage.h">
+      <Filter>server\dataRoute</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\CKDJWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\CMACDWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\CMarketDataReader.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\CMarketDataWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\COrderReqWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\COrderRspWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\CSingnalWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\CTradeWriter.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\Gen.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\Structs.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\generate\TypeDefine.h">
+      <Filter>server\generate</Filter>
+    </ClInclude>
+    <ClInclude Include="server\index\CIndexKDJ.h">
+      <Filter>server\index</Filter>
+    </ClInclude>
+    <ClInclude Include="server\index\CIndexMACD.h">
+      <Filter>server\index</Filter>
+    </ClInclude>
+    <ClInclude Include="server\log\CStdLog.h">
+      <Filter>server\log</Filter>
+    </ClInclude>
+    <ClInclude Include="server\log\FileLogger.h">
+      <Filter>server\log</Filter>
+    </ClInclude>
+    <ClInclude Include="server\log\LogDefine.h">
+      <Filter>server\log</Filter>
+    </ClInclude>
+    <ClInclude Include="server\log\ScreenLogger.h">
+      <Filter>server\log</Filter>
+    </ClInclude>
+    <ClInclude Include="server\xml\CConfigXml.h">
+      <Filter>server\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="server\xml\CXML.h">
+      <Filter>server\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="server\tcore\TCore.h">
+      <Filter>server\tcore</Filter>
+    </ClInclude>
+    <ClInclude Include="server\tcore\TDataService.h">
+      <Filter>server\tcore</Filter>
+    </ClInclude>
+    <ClInclude Include="server\tcore\TDataSet.h">
+      <Filter>server\tcore</Filter>
+    </ClInclude>
+    <ClInclude Include="server\util\CMDBufferQueue.h">
+      <Filter>server\util</Filter>
+    </ClInclude>
+    <ClInclude Include="server\util\CTimeTranslator.h">
+      <Filter>server\util</Filter>
+    </ClInclude>
+    <ClInclude Include="server\util\DataFile.h">
+      <Filter>server\util</Filter>
+    </ClInclude>
+    <ClInclude Include="ZYsystemDoc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\XTPRibbonBarZ.h">
+      <Filter>controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ZYsystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZYsystemView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="view\OutputPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\OrderPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\FundPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\IndexDataPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\SignarPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\TradePane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\MarketDataPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\IndexGraphPane.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ZYSystemMain.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ZYSystemServerLoader.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\calculator\CalculatorModel.cpp">
+      <Filter>server\calculator</Filter>
+    </ClCompile>
+    <ClCompile Include="server\calculator\CalculatorModelA.cpp">
+      <Filter>server\calculator</Filter>
+    </ClCompile>
+    <ClCompile Include="server\connector\ASPConnector.cpp">
+      <Filter>server\connector</Filter>
+    </ClCompile>
+    <ClCompile Include="server\connector\Connector.cpp">
+      <Filter>server\connector</Filter>
+    </ClCompile>
+    <ClCompile Include="server\connector\HisConnector.cpp">
+      <Filter>server\connector</Filter>
+    </ClCompile>
+    <ClCompile Include="server\connector\MDOnlyConnector.cpp">
+      <Filter>server\connector</Filter>
+    </ClCompile>
+    <ClCompile Include="server\connector\SimConnector.cpp">
+      <Filter>server\connector</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ctpSpi\CtpMDSpi.cpp">
+      <Filter>server\ctpSpi</Filter>
+    </ClCompile>
+    <ClCompile Include="server\ctpSpi\CtpTradeSpi.cpp">
+      <Filter>server\ctpSpi</Filter>
+    </ClCompile>
+    <ClCompile Include="server\dataRoute\CDataRoute.cpp">
+      <Filter>server\dataRoute</Filter>
+    </ClCompile>
+    <ClCompile Include="server\dataRoute\CTPackageFactory.cpp">
+      <Filter>server\dataRoute</Filter>
+    </ClCompile>
+    <ClCompile Include="server\dataRoute\MsgQueue.cpp">
+      <Filter>server\dataRoute</Filter>
+    </ClCompile>
+    <ClCompile Include="server\dataRoute\TEndPoint.cpp">
+      <Filter>server\dataRoute</Filter>
+    </ClCompile>
+    <ClCompile Include="server\dataRoute\TPackage.cpp">
+      <Filter>server\dataRoute</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\CKDJWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\CMACDWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\CMarketDataReader.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\CMarketDataWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\COrderReqWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\COrderRspWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\CSingnalWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\generate\CTradeWriter.cpp">
+      <Filter>server\generate</Filter>
+    </ClCompile>
+    <ClCompile Include="server\index\CIndexKDJ.cpp">
+      <Filter>server\index</Filter>
+    </ClCompile>
+    <ClCompile Include="server\index\CIndexMACD.cpp">
+      <Filter>server\index</Filter>
+    </ClCompile>
+    <ClCompile Include="server\log\CStdLog.cpp">
+      <Filter>server\log</Filter>
+    </ClCompile>
+    <ClCompile Include="server\log\FileLogger.cpp">
+      <Filter>server\log</Filter>
+    </ClCompile>
+    <ClCompile Include="server\log\ScreenLogger.cpp">
+      <Filter>server\log</Filter>
+    </ClCompile>
+    <ClCompile Include="server\xml\CConfigXml.cpp">
+      <Filter>server\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="server\xml\CXML.cpp">
+      <Filter>server\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="server\tcore\TCore.cpp">
+      <Filter>server\tcore</Filter>
+    </ClCompile>
+    <ClCompile Include="server\tcore\TDataService.cpp">
+      <Filter>server\tcore</Filter>
+    </ClCompile>
+    <ClCompile Include="server\tcore\TDataSet.cpp">
+      <Filter>server\tcore</Filter>
+    </ClCompile>
+    <ClCompile Include="server\util\CTimeTranslator.cpp">
+      <Filter>server\util</Filter>
+    </ClCompile>
+    <ClCompile Include="server\util\DataFile.cpp">
+      <Filter>server\util</Filter>
+    </ClCompile>
+    <ClCompile Include="ZYsystemDoc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\XTPRibbonBarZ.cpp">
+      <Filter>controls</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ZYsystem.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

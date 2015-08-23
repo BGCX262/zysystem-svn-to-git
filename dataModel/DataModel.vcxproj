@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CF84FC66-431B-4C37-A4AD-957C00891395}</ProjectGuid>
+    <RootNamespace>DataModel</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>nmake all -f GenFile</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake all -f GenFile</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake clean -f GenFile</NMakeCleanCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="BaseType.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="config.xml" />
+    <None Include="LogDefine.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GenFile" />
+    <None Include="Model.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xslt\cpp\dataRouteCpp.xslt" />
+    <None Include="xslt\cpp\dataRouteH.xslt" />
+    <None Include="xslt\cpp\gen.xslt" />
+    <None Include="xslt\cpp\hasReaderCsvCPP.xslt" />
+    <None Include="xslt\cpp\hasReaderCsvH.xslt" />
+    <None Include="xslt\cpp\hasWriterCsvCPP.xslt">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xslt\cpp\hasWriterCsvH.xslt" />
+    <None Include="xslt\cpp\LogDefine.xslt" />
+    <None Include="xslt\cpp\stdLogCpp.xslt" />
+    <None Include="xslt\cpp\stdLogH.xslt">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="xslt\cpp\Structs.xslt" />
+    <None Include="xslt\cpp\tEndPointCPP.xslt" />
+    <None Include="xslt\cpp\tEndPointH.xslt" />
+    <None Include="xslt\cpp\test.xslt" />
+    <None Include="xslt\cpp\tPackageFactoryCPP.xslt" />
+    <None Include="xslt\cpp\tPackageFactoryH.xslt" />
+    <None Include="xslt\cpp\TypeDefine.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xsd Include="BaseType.xsd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
